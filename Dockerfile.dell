@@ -1,0 +1,44 @@
+# Dockerfile for Dell-enhanced SNMP Exporter
+FROM golang:1.23-alpine AS builder
+
+# Install dependencies for building (including curl for promu download)
+RUN apk --no-cache add git make bash curl tar
+
+# Copy source code
+WORKDIR /app
+COPY . .
+
+# Build the enhanced exporter
+RUN make build
+
+# Final stage - minimal runtime image
+FROM alpine:latest
+
+# Install SNMP tools for testing
+RUN apk --no-cache add net-snmp-tools curl
+
+# Create user for security
+RUN addgroup -S snmp && adduser -S snmp -G snmp
+
+# Create config directory
+RUN mkdir -p /etc/snmp_exporter
+
+# Copy the built binary and config
+COPY --from=builder /app/snmp_exporter /usr/local/bin/snmp_exporter
+COPY --from=builder /app/snmp-dell-minimal.yml /etc/snmp_exporter/snmp.yml
+
+# Make it executable
+RUN chmod +x /usr/local/bin/snmp_exporter
+
+# Set ownership
+RUN chown -R snmp:snmp /etc/snmp_exporter
+
+# Switch to non-root user
+USER snmp
+
+# Expose the port
+EXPOSE 9116
+
+# Run the exporter
+ENTRYPOINT ["/usr/local/bin/snmp_exporter"]
+CMD ["--config.file=/etc/snmp_exporter/snmp.yml"]

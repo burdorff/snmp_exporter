@@ -1,0 +1,9 @@
+auths:
+  dell_cmc_v2:
+    version: 2
+    community: public
+
+modules:
+  dell_chassis_minimal:
+    walk:
+      - 1.3.6.1.4.1.674

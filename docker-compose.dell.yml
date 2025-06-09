@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  snmp-exporter-dell:
+    build:
+      context: .
+      dockerfile: Dockerfile.dell
+    container_name: snmp_exporter_dell
+    ports:
+      - "9116:9116"
+    environment:
+      - TZ=UTC
+    volumes:
+      # Mount the config directory like your original setup
+      - /opt1/docker/config/snmp-exporter/:/etc/snmp_exporter/:ro
+    restart: unless-stopped
+    networks:
+      - monitoring
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9116/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  monitoring:
+    driver: bridge

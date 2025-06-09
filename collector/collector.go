@@ -390,6 +390,11 @@ func (c Collector) collect(ch chan<- prometheus.Metric, logger *slog.Logger, cli
 		oidToPdu[pdu.Name[1:]] = pdu
 	}
 
+	dellMetrics := processDellMetrics(oidToPdu, logger)
+	for _, metric := range dellMetrics {
+    		ch <- metric
+	}
+
 	metricTree := buildMetricTree(module.Metrics)
 	// Look for metrics that match each pdu.
 	for oid, pdu := range oidToPdu {

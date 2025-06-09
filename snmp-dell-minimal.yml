@@ -1,0 +1,252 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+auths:
+  dell_cmc_v2:
+    community: public
+    security_level: noAuthNoPriv
+    auth_protocol: MD5
+    priv_protocol: DES
+    version: 2
+modules:
+  dell_chassis_minimal:
+    walk:
+    - 1.3.6.1.4.1.674
+    metrics:
+    - name: productIdentificationDisplayName
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.100.1
+      type: DisplayString
+      help: Name of this product for display purposes. - 1.3.6.1.4.1.674.10895.3000.1.2.100.1
+    - name: productIdentificationDescription
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.100.2
+      type: DisplayString
+      help: 'A short description of this product such as: Ethernet Router Switch.
+        - 1.3.6.1.4.1.674.10895.3000.1.2.100.2'
+    - name: productIdentificationVendor
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.100.3
+      type: DisplayString
+      help: 'The name of the product manufacturer, such as: Dell Inc. - 1.3.6.1.4.1.674.10895.3000.1.2.100.3'
+    - name: productIdentificationVersion
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.100.4
+      type: DisplayString
+      help: The version of this product. - 1.3.6.1.4.1.674.10895.3000.1.2.100.4
+    - name: productIdentificationBuildNumber
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.100.5
+      type: DisplayString
+      help: The software build number of the product. - 1.3.6.1.4.1.674.10895.3000.1.2.100.5
+    - name: productIdentificationURL
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.100.6
+      type: DisplayString
+      help: The URL of the web-based application to manage this device, should the
+        device provide one - 1.3.6.1.4.1.674.10895.3000.1.2.100.6
+    - name: productIdentificationDeviceNetworkName
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.100.7
+      type: DisplayString
+      help: Device Name. - 1.3.6.1.4.1.674.10895.3000.1.2.100.7
+    - name: productIdentificationPerBoxIndex
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.1
+      type: gauge
+      help: The index of the stack unit to which this conceptual row corresponds -
+        1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.1
+      indexes:
+      - labelname: productIdentificationPerBoxIndex
+        type: gauge
+    - name: productIdentificationSerialNumber
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.2
+      type: DisplayString
+      help: Serial number of the product. - 1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.2
+      indexes:
+      - labelname: productIdentificationPerBoxIndex
+        type: gauge
+    - name: productIdentificationAssetTag
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.3
+      type: DisplayString
+      help: Asset tag of the product. - 1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.3
+      indexes:
+      - labelname: productIdentificationPerBoxIndex
+        type: gauge
+    - name: productIdentificationServiceTag
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.4
+      type: DisplayString
+      help: Service tag of the product. - 1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.4
+      indexes:
+      - labelname: productIdentificationPerBoxIndex
+        type: gauge
+    - name: productIdentificationChassisServiceTag
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.5
+      type: DisplayString
+      help: Chassis Service tag of the product. - 1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.5
+      indexes:
+      - labelname: productIdentificationPerBoxIndex
+        type: gauge
+    - name: productIdentificationBootromVersion
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.6
+      type: DisplayString
+      help: The boot image version of the product. - 1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.6
+      indexes:
+      - labelname: productIdentificationPerBoxIndex
+        type: gauge
+    - name: productIdentificationPiecePartID
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.7
+      type: DisplayString
+      help: The piece part id of the product. - 1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.7
+      indexes:
+      - labelname: productIdentificationPerBoxIndex
+        type: gauge
+    - name: productIdentificationPPIDRevision
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.8
+      type: DisplayString
+      help: The PPID revision of the product. - 1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.8
+      indexes:
+      - labelname: productIdentificationPerBoxIndex
+        type: gauge
+    - name: productIdentificationExpressServiceCode
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.9
+      type: DisplayString
+      help: The express cervice code of the product. - 1.3.6.1.4.1.674.10895.3000.1.2.100.8.1.9
+      indexes:
+      - labelname: productIdentificationPerBoxIndex
+        type: gauge
+    - name: productIdentificationBannerMotdAckMode
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.100.9
+      type: gauge
+      help: If enable is selected, user will be required to acknowledge the banner
+        displayed on the console - 1.3.6.1.4.1.674.10895.3000.1.2.100.9
+      enum_values:
+        1: enable
+        2: disable
+    - name: productStatusGlobalStatus
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.110.1
+      type: gauge
+      help: Current status of the product.This is a rollup for the entire product
+        - 1.3.6.1.4.1.674.10895.3000.1.2.110.1
+      enum_values:
+        3: ok
+        4: non-critical
+        5: critical
+    - name: productStatusLastGlobalStatus
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.110.2
+      type: gauge
+      help: The status before the current status which induced an initiative to issue
+        a global status change trap. - 1.3.6.1.4.1.674.10895.3000.1.2.110.2
+      enum_values:
+        3: ok
+        4: non-critical
+        5: critical
+    - name: productStatusTimeStamp
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.110.3
+      type: gauge
+      help: The last time that the product global status has been updated - 1.3.6.1.4.1.674.10895.3000.1.2.110.3
+    - name: productStatusGetTimeOut
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.110.4
+      type: gauge
+      help: Suggested time out value in milliseconds for how long the SNMP getter
+        should wait while attempting to poll the product SNMP service. - 1.3.6.1.4.1.674.10895.3000.1.2.110.4
+    - name: productStatusRefreshRate
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.110.5
+      type: gauge
+      help: Rate in seconds at which the SNMP service cached data is being updated.
+        - 1.3.6.1.4.1.674.10895.3000.1.2.110.5
+    - name: productStatusGeneratingTrapsFlag
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.110.6
+      type: gauge
+      help: Indicates if this SNMP service is generating SNMP Traps - 1.3.6.1.4.1.674.10895.3000.1.2.110.6
+      enum_values:
+        1: "true"
+        2: "false"
+        3: disabled
+    - name: envMonFanStatusIndex
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.110.7.1.1.1
+      type: gauge
+      help: Unique index for the fan being instrumented - 1.3.6.1.4.1.674.10895.3000.1.2.110.7.1.1.1
+      indexes:
+      - labelname: envMonFanStatusIndex
+        type: gauge
+    - name: envMonFanStatusDescr
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.110.7.1.1.2
+      type: DisplayString
+      help: Textual description of the fan being instrumented - 1.3.6.1.4.1.674.10895.3000.1.2.110.7.1.1.2
+      indexes:
+      - labelname: envMonFanStatusIndex
+        type: gauge
+    - name: envMonFanState
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.110.7.1.1.3
+      type: gauge
+      help: The mandatory state of the fan being instrumented - 1.3.6.1.4.1.674.10895.3000.1.2.110.7.1.1.3
+      indexes:
+      - labelname: envMonFanStatusIndex
+        type: gauge
+      enum_values:
+        1: normal
+        2: warning
+        3: critical
+        4: shutdown
+        5: notPresent
+        6: notFunctioning
+    - name: envMonFanSpeed
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.110.7.1.1.4
+      type: gauge
+      help: Speed of the fan being instrumented - 1.3.6.1.4.1.674.10895.3000.1.2.110.7.1.1.4
+      indexes:
+      - labelname: envMonFanStatusIndex
+        type: gauge
+    - name: envMonSupplyStatusIndex
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.110.7.2.1.1
+      type: gauge
+      help: Unique index for the power supply being instrumented - 1.3.6.1.4.1.674.10895.3000.1.2.110.7.2.1.1
+      indexes:
+      - labelname: envMonSupplyStatusIndex
+        type: gauge
+    - name: envMonSupplyStatusDescr
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.110.7.2.1.2
+      type: DisplayString
+      help: Textual description of the power supply being instrumented - 1.3.6.1.4.1.674.10895.3000.1.2.110.7.2.1.2
+      indexes:
+      - labelname: envMonSupplyStatusIndex
+        type: gauge
+    - name: envMonSupplyState
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.110.7.2.1.3
+      type: gauge
+      help: The mandatory state of the power supply being instrumented. - 1.3.6.1.4.1.674.10895.3000.1.2.110.7.2.1.3
+      indexes:
+      - labelname: envMonSupplyStatusIndex
+        type: gauge
+      enum_values:
+        1: normal
+        2: warning
+        3: critical
+        4: shutdown
+        5: notPresent
+        6: notFunctioning
+    - name: envMonSupplySource
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.110.7.2.1.4
+      type: gauge
+      help: The power supply source - 1.3.6.1.4.1.674.10895.3000.1.2.110.7.2.1.4
+      indexes:
+      - labelname: envMonSupplyStatusIndex
+        type: gauge
+      enum_values:
+        1: unknown
+        2: ac
+        3: dc
+        4: externalPowerSupply
+        5: internalRedundant
+    - name: envMonSupplyCurrentPower
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.110.7.2.1.5
+      type: gauge
+      help: Current power consumption of the power supply being instrumented - 1.3.6.1.4.1.674.10895.3000.1.2.110.7.2.1.5
+      indexes:
+      - labelname: envMonSupplyStatusIndex
+        type: gauge
+    - name: envMonSupplyAveragePower
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.110.7.2.1.6
+      type: gauge
+      help: Average power consumption of the power supply being instrumented - 1.3.6.1.4.1.674.10895.3000.1.2.110.7.2.1.6
+      indexes:
+      - labelname: envMonSupplyStatusIndex
+        type: gauge
+    - name: envMonSupplyAvgStartTime
+      oid: 1.3.6.1.4.1.674.10895.3000.1.2.110.7.2.1.7
+      type: DateAndTime
+      help: The power supply data start - 1.3.6.1.4.1.674.10895.3000.1.2.110.7.2.1.7
+      indexes:
+      - labelname: envMonSupplyStatusIndex
+        type: gauge
